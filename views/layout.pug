@@ -1,0 +1,15 @@
+html
+  head
+    title ArtOfRao - #{title}
+    block styles
+        link(href='/css/main.css', rel='stylesheet')
+  body
+    a#logo(href='/'): img(src='/assets/ui/logo.svg' width="100" height="auto" alt="Logo")
+    ul#nav_bar
+        li: a(href="/") Home
+        li: a(href="/about") About
+        li: a(href="/contact") Contact
+    div#content
+        block content
+    div#footer
+        p Footer

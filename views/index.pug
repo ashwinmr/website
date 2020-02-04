@@ -1,11 +1,5 @@
-html
-  head
-    link(href='/css/main.css', rel='stylesheet')
-  body
-    a(href='/' id='logo'): img(src='/assets/ui/logo.svg' width="100" height="auto" alt="Logo")
-    ul(id='nav_bar')
-        li: a(href="/") Home
-        li: a(href="/about") About
-        li: a(href="/contact") Contact
+extends layout.pug
+
+block content
     h1 #{title}
     p Welcome to ArtOfRao

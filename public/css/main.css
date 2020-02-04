@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    margin: 0;
 }
 
 #nav_bar {
@@ -24,4 +25,16 @@ body {
 
 #nav_bar li a:hover {
     color: grey;
+}
+
+#content {
+    margin-left: 2%;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
