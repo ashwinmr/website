@@ -17,6 +17,9 @@ app.set('view engine', 'pug')
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home' })
 })
+app.get('/gallery', (req, res) => {
+    res.render('gallery', { title: 'Gallery' })
+})
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About' })
 })
