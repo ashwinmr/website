@@ -26,6 +26,9 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact' })
 })
+app.get('/blog', (req, res) => {
+    res.render('blog', { title: 'Blog' })
+})
 
 // Start server
 app.listen(3000, () => {
