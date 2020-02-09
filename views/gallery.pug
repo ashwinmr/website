@@ -1,5 +1,11 @@
 extends layout.pug
 
+block append styles
+    link(href='/css/gallery.css', rel='stylesheet')
+
 block content
     h1 #{title}
-    p Gallery
+
+    ul#gallery
+        li.gallery_elem: a(href='/images/1.jpg', target='_blank'): img(src='/images/1.jpg' alt="Image")
+        li.gallery_elem: a(href='/images/2.jpg', target='_blank'): img(src='/images/2.jpg' alt="Image")

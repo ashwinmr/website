@@ -29,9 +29,11 @@ body {
 
 #content {
     margin-left: 2%;
+    margin-right: 2%;
 }
 
 #footer {
+    background-color: white;
     display: flex;
     justify-content: center;
     position: fixed;
