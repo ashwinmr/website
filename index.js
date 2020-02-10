@@ -48,6 +48,7 @@ app.get('/form', (req, res) => {
 app.post('/form/addpost', (req, res) => {
     // This requires parsing the request using express
     console.log(req.body)
+    res.redirect('/form')
 })
 
 // Start server
