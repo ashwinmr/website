@@ -7,6 +7,10 @@ const app = express()
 // Allow public directory to be used by website
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Parse requests to obtain request.body
+app.use(express.urlencoded()); // to support URL-encoded request bodies
+app.use(express.json());       // to support JSON-encoded request bodies
+
 // Set views folder
 app.set('views', path.join(__dirname, 'views'))
 
@@ -40,6 +44,10 @@ app.get('/blog', (req, res) => {
 })
 app.get('/form', (req, res) => {
     res.render('form', { title: 'Form' })
+})
+app.post('/form/addpost', (req, res) => {
+    // This requires parsing the request using express
+    console.log(req.body)
 })
 
 // Start server

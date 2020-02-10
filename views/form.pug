@@ -5,7 +5,7 @@ block append styles
 
 block content
     h1 #{title}
-    form(action='addpost', method='POST')
+    form(action='/form/addpost', method='POST')
         label Title
         input(type='text', name='title', placeholder='Title')
         label Description
