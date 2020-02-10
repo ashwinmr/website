@@ -1,0 +1,15 @@
+extends layout.pug
+
+block append styles
+    link(href='/css/form.css', rel='stylesheet')
+
+block content
+    h1 #{title}
+    form(action='addpost', method='POST')
+        label Title
+        input(type='text', name='title', placeholder='Title')
+        label Description
+        input(type='text', name='description', placeholder='Description')
+        label Content
+        textarea(name='content', cols="50" rows="20")
+        input(type='submit',value='Add Post')

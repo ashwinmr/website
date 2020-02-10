@@ -1,4 +1,11 @@
 extends layout.pug
 
+block append styles
+    link(href='/css/blog.css', rel='stylesheet')
+
 block content
     h1 #{title}
+    div#blog_post
+        h2#blog_post_title #{blog_post.title}
+        span#blog_post_info Posted by #{blog_post.author} on #{blog_post.date}
+        p #{blog_post.content}

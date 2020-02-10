@@ -27,7 +27,19 @@ app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact' })
 })
 app.get('/blog', (req, res) => {
-    res.render('blog', { title: 'Blog' })
+    res.render('blog', {
+        title: 'Blog',
+        blog_post: {
+            title: "Example Title",
+            description: "Example description",
+            date: "01/01/2020",
+            author: "example author",
+            content: "Example content",
+        }
+    })
+})
+app.get('/form', (req, res) => {
+    res.render('form', { title: 'Form' })
 })
 
 // Start server
