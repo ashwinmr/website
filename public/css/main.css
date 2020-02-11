@@ -3,12 +3,25 @@ body {
     margin: 0;
 }
 
+#header {
+    background-color: white;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    
+    /* Stick to top */
+    position: sticky;
+    top: 0;
+    /*  */
+}
+
 #nav_bar {
     display: flex;
     justify-content: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    
+    flex-wrap: wrap;
 }
 
 #nav_bar li {
@@ -33,6 +46,7 @@ body {
 }
 
 #footer {
+    border-top: 1px solid grey;
     background-color: white;
     display: flex;
     justify-content: center;
