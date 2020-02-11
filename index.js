@@ -1,8 +1,14 @@
 const path = require('path')
 const express = require('express')
-
+const mongoose = require('mongoose');
+const blog_post_model = require('./database/models/blog_post');
 
 const app = express()
+
+// Connect to database
+mongoose.connect('mongodb://localhost:27017/blog', { useNewUrlParser: true })
+    .then(() => 'You are now connected to Mongo!')
+    .catch(err => console.error('Something went wrong', err))
 
 // Allow public directory to be used by website
 app.use(express.static(path.join(__dirname, 'public')));
@@ -30,25 +36,21 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact' })
 })
-app.get('/blog', (req, res) => {
+app.get('/blog', async(req, res) => {
+    const blog_posts = await blog_post_model.find({})
     res.render('blog', {
         title: 'Blog',
-        blog_post: {
-            title: "Example Title",
-            description: "Example description",
-            date: "01/01/2020",
-            author: "example author",
-            content: "Example content",
-        }
+        blog_posts: blog_posts,
     })
 })
 app.get('/form', (req, res) => {
     res.render('form', { title: 'Form' })
 })
-app.post('/form/addpost', (req, res) => {
-    // This requires parsing the request using express
-    console.log(req.body)
-    res.redirect('/form')
+app.post('/form/add_blog_post', (req, res) => {
+    // req.body requires parsing the request using express
+    blog_post_model.create(req.body, (error, post) => {
+        res.redirect('/blog')
+    })
 })
 
 // Start server
