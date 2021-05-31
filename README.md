@@ -9,4 +9,4 @@ Start the server
 node app.js
 ```
 
-Open a browser and go to 'localhost:3000'
+Open a browser and go to `localhost:3000`
