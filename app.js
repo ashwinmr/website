@@ -54,6 +54,7 @@ app.post('/form/add_blog_post', (req, res) => {
 })
 
 // Start server
-app.listen(3000, () => {
-    console.log('Server is up on 3000')
+app.listen(80, () => {
+    // Use port 80 which is default for http
+    console.log('Server is running')
 })
